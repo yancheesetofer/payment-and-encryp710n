@@ -21,8 +21,16 @@ public class Substituter implements ITransformer {
 
     public String transform(String str) {
         // TODO: Complete this function
-
-        return "";
+        StringBuilder sb = new StringBuilder();
+        //create stringBuilder instance to build a desired string
+        for (char c : str.toCharArray()) {
+            if (mapping.containsKey(c)) {
+                sb.append(mapping.get(c));
+            } else {
+                sb.append(c);
+            }
+        }
+        return sb.toString();
     }
 
 }

@@ -8,9 +8,17 @@ public class Shifter implements ITransformer {
     }
 
     public String transform(String str) {
-        // TODO: Complete this function
+        String newStr = str;
+        if (this.disposition > 0) {
+            for (int i = 0; i < this.disposition; i++) {
+                newStr = this.shiftRightByOne(newStr);
+            }
+        } else {
+            for (int i = 0; i > this.disposition; i--){
+                newStr = this.shiftLeftByOne(newStr);
 
-        return "";
+            }        }
+        return newStr;
     }
 
     private String shiftRightByOne(String s) {
