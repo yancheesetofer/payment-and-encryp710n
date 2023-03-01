@@ -14,7 +14,9 @@ public class GiftAdapter implements Payment {
     @Override
     public String pay(Item item) {
         // TODO: implement method
-
-        return null;
+        if (adaptedGift.isRedeemed()){
+            return "This gift has been redeemed.";
+        }
+        return adaptedGift.redeem(item);
     }
 }

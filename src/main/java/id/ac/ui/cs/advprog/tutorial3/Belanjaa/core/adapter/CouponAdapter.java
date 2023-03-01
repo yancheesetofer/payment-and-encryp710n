@@ -14,7 +14,9 @@ public class CouponAdapter  implements Payment {
     @Override
     public String pay(Item item) {
         // TODO: implement method
-
-        return null;
+        if (adaptedCoupon.isRedeemed()) {
+            return "The coupon has been redeemed";
+        }
+        return adaptedCoupon.redeem(item);
     }
 }
